@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarChild"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/paddingLeftLogin"
+        android:paddingRight="@dimen/paddingRightLogin">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="0.0dp">
+                    <EditText
+                        android:id="@+id/startGGSearch"
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="Start address" />
+                    <ImageButton
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/marker"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="10dp" />
+                    <ImageButton
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/gps_24"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+                    <EditText
+                        android:id="@+id/endGGSearch"
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="End address" />
+                    <ImageButton
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/marker"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="10dp" />
+                    <ImageButton
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/gps_24"
+                        android:background="@android:color/transparent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageButton
+                android:id="@+id/exchange"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/exchange"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="50dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="2dp"
+        android:background="#39619D" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/paddingLeftLogin"
+            android:paddingRight="@dimen/paddingRightLogin"
+            android:minWidth="25px"
+            android:minHeight="25px" />
+    </ScrollView>
+</LinearLayout>

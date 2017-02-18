@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment
+        android:id="@+id/mapnew"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:src="@drawable/Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonSearch"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="@dimen/marginLeftButtonSearch"
+        android:layout_marginTop="@dimen/marginTopButtonSearch" />
+    <ImageButton
+        android:src="@drawable/Direction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonDirection"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="@dimen/marginLeftButtonDirection"
+        android:layout_marginTop="@dimen/marginTopButtonDirection" />
+    <ImageButton
+        android:src="@drawable/FastSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonFastSearch"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="@dimen/marginLeftButtonFastSearch"
+        android:layout_marginTop="@dimen/marginTopButtonFastSearch" />
+    <ImageButton
+        android:src="@anim/ButtonMainOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonMain"
+        android:background="@android:color/transparent"
+        android:layout_marginLeft="@dimen/marginLeftButtonMain"
+        android:layout_marginTop="@dimen/marginTopButtonMain" />
+</FrameLayout>

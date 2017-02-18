@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarChildPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/paddingLeftLogin"
+            android:paddingRight="@dimen/paddingRightLogin"
+            android:paddingTop="20dp">
+            <TextView
+                android:id="@+id/titleKey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Key"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="19dp" />
+            <AutoCompleteTextView
+                android:paddingTop="@dimen/standard_45_10dp"
+                android:id="@+id/key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Key"
+                android:background="@drawable/border" />
+            <TextView
+                android:id="@+id/titlePlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name location"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:textSize="19dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp" />
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Name location"
+                android:background="@drawable/border"
+                android:paddingTop="@dimen/standard_45_10dp" />
+            <TextView
+                android:id="@+id/titleAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textStyle="bold"
+                android:textSize="19dp"
+                android:textColor="@color/colorPrimary"
+                android:paddingTop="10dp"
+                android:layout_marginTop="10dp" />
+            <EditText
+                android:paddingTop="@dimen/standard_45_10dp"
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Address"
+                android:background="@drawable/border" />
+            <TextView
+                android:id="@+id/titlePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textStyle="bold"
+                android:textSize="19dp"
+                android:textColor="@color/colorPrimary"
+                android:paddingTop="10dp"
+                android:layout_marginTop="10dp" />
+            <EditText
+                android:paddingTop="@dimen/standard_45_10dp"
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:hint="Phone"
+                android:background="@drawable/border" />
+            <TextView
+                android:id="@+id/titleWebsite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Website"
+                android:textStyle="bold"
+                android:textSize="19dp"
+                android:textColor="@color/colorPrimary"
+                android:paddingTop="10dp"
+                android:layout_marginTop="10dp" />
+            <EditText
+                android:paddingTop="@dimen/standard_45_10dp"
+                android:id="@+id/website"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Webstie"
+                android:background="@drawable/border" />
+            <TextView
+                android:id="@+id/titleDiscribe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discribe"
+                android:textStyle="bold"
+                android:textSize="19dp"
+                android:textColor="@color/colorPrimary"
+                android:paddingTop="10dp"
+                android:layout_marginTop="10dp" />
+            <EditText
+                android:paddingTop="@dimen/standard_45_10dp"
+                android:id="@+id/describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:hint="Describe"
+                android:background="@drawable/border" />
+            <TextView
+                android:id="@+id/titleImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Image"
+                android:textStyle="bold"
+                android:textSize="19dp"
+                android:textColor="@color/colorPrimary"
+                android:paddingTop="10dp"
+                android:layout_marginTop="10dp" />
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/upImage"
+                android:src="@drawable/add"
+                android:scaleType="fitCenter" />
+            <HorizontalScrollView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content">
+                <LinearLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/image" />
+            </HorizontalScrollView>
+            <Button
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonPost"
+                android:text="Post"
+                android:textSize="21dp"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/colorWhiteText"
+                android:layout_marginBottom="50dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

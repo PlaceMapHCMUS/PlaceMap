@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+   android:oneshot="true">
+  <item android:drawable="@drawable/ButtonMain10" android:duration="10" />
+  <item android:drawable="@drawable/ButtonMain09" android:duration="10" />
+  <item android:drawable="@drawable/ButtonMain08" android:duration="10" />
+  <item android:drawable="@drawable/ButtonMain07" android:duration="10" />
+  <item android:drawable="@drawable/ButtonMain06" android:duration="10" />
+  <item android:drawable="@drawable/ButtonMain05" android:duration="10" />
+  <item android:drawable="@drawable/ButtonMain04" android:duration="10" />
+  <item android:drawable="@drawable/ButtonMain03" android:duration="10" />
+  <item android:drawable="@drawable/ButtonMain02" android:duration="10" />
+  <item android:drawable="@drawable/ButtonMain01" android:duration="10" />
+
+</animation-list>

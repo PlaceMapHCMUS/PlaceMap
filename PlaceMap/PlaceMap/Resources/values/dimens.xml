@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <dimen name="sizeText">17dp</dimen>
+  
+  <dimen name="marginLeftButtonSearch">241dp</dimen>
+  <dimen name="marginTopButtonSearch">270dp</dimen>
+  
+  <dimen name="marginLeftButtonFastSearch">175dp</dimen>
+  <dimen name="marginTopButtonFastSearch">295dp</dimen>
+  
+  <dimen name="marginLeftButtonMain">230dp</dimen>
+  <dimen name="marginTopButtonMain">350dp</dimen>
+  
+  <dimen name="marginLeftButtonDirection">150dp</dimen>
+  <dimen name="marginTopButtonDirection">360dp</dimen>
+
+  <dimen name="sizeImageMenu">40dp</dimen>
+  <dimen name="marginLeftImageMenu">10dp</dimen>
+
+  <dimen name="sizeImageMenu">40dp</dimen>
+  <dimen name="marginLeftTextMenu">20dp</dimen>
+
+  <dimen name="paddingLeftLinearMenu">5dp</dimen>
+  <dimen name="paddingTopLinearMenu">15dp</dimen>
+  <dimen name="paddingBottomLinearMenu">2dp</dimen>
+  
+  <!--dimen login-->
+  <dimen name="paddingLeftLogin">10dp</dimen>
+  <dimen name="paddingTopLogin">50dp</dimen>
+  <dimen name="paddingRightLogin">10dp</dimen>
+  <dimen name="marginTopButtonLogin">20dp</dimen>
+  <dimen name="textsizeButtonLogin">20dp</dimen>
+
+  <dimen name="standard_45_5dp">5dp</dimen>
+  <dimen name="standard_45_10dp">10dp</dimen>
+  <dimen name="standard_45_15dp">15dp</dimen>
+  <dimen name="standard_45_20dp">20dp</dimen>
+  <dimen name="standard_45_25dp">25dp</dimen>
+  <dimen name="standard_45_30dp">30dp</dimen>
+  <dimen name="standard_45_35dp">35dp</dimen>
+  <dimen name="standard_45_40dp">40dp</dimen>
+  <dimen name="standard_45_45dp">45dp</dimen>
+  <dimen name="standard_45_50dp">50dp</dimen>
+  <dimen name="standard_45_55dp">55dp</dimen>
+   <dimen name="standard_45_90dp">90dp</dimen>
+</resources>

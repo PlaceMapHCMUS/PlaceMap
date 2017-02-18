@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="@dimen/paddingLeftLinearMenu"
+    android:paddingBottom="@dimen/paddingBottomLinearMenu"
+    android:paddingTop="@dimen/paddingTopLinearMenu">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="@dimen/sizeImageMenu"
+        android:layout_height="@dimen/sizeImageMenu"
+        android:layout_weight="1"
+        android:id="@+id/imageViewMenu"
+        android:layout_marginLeft="@dimen/marginLeftImageMenu" />
+    <TextView
+        android:text="First Name"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewMenu"
+        android:layout_marginLeft="@dimen/marginLeftTextMenu"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:textSize="@dimen/sizeText"
+        android:textColor="@color/colorText" />
+</LinearLayout>

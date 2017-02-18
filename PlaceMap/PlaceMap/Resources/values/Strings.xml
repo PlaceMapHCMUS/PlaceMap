@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">PlaceMap</string>
+  <string name="openDrawer">Menu</string>
+  <string name="closeDrawer">PlaceMap</string>
+  <string name="google_maps_key">AIzaSyDgdXcFxK00YDHs6FAL6xdhxMtiQiBaA6k</string>
+  
+  <string name="login">Log in</string>
+  <string name="post">Post location</string>
+  <string name="locationManager">Location Manager</string>
+  <string name="account">My account</string>
+  <string name="language">Language</string>
+  <string name="about">Introduction</string>
+  <string name="exit">Exit</string>
+  <string name="register">Register</string>
+  <string name="post">Post location</string>
+  <string name="fastSearch">Fast search</string>
+  <string name="search">Search</string> 
+  <string name="ggDirection">Google Direction</string>
+</resources>

@@ -7,7 +7,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Support.V7.App;
-using PlaceMap.Resources.layout;
+
 using System;
 
 namespace PlaceMap

@@ -5,6 +5,7 @@
   <string name="openDrawer">Menu</string>
   <string name="closeDrawer">PlaceMap</string>
   <string name="google_maps_key">AIzaSyDgdXcFxK00YDHs6FAL6xdhxMtiQiBaA6k</string>
+  <string name="facebook_app_id">1002871986510681</string>
   
   <string name="login">Log in</string>
   <string name="post">Post location</string>

@@ -13,6 +13,7 @@ using Android.Support.V7.App;
 using Android.Graphics;
 using System.IO;
 using Java.Util;
+using Android.Util;
 
 namespace PlaceMap
 {
@@ -27,6 +28,16 @@ namespace PlaceMap
         LinearLayout linearLayoutImage;
         int index;
         AutoCompleteTextView keyAuto;
+
+        //bitmap array
+        List<String> listStringBitmap = new List<String>();
+
+        //azure 
+        PlaceManager placeManager = new PlaceManager();
+        ImagePlaceManager imageManager = new ImagePlaceManager();
+
+        Button post;
+        EditText key, name, phone, website, descrip;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -65,6 +76,41 @@ namespace PlaceMap
             };
             ArrayAdapter adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, keys);
             keyAuto.Adapter = adapter;
+
+
+            //post data on azure
+            GetDataFromScreen();
+        }
+        public void GetDataFromScreen()
+        {
+            key = FindViewById<EditText>(Resource.Id.key);
+            name = FindViewById<EditText>(Resource.Id.name);
+            phone = FindViewById<EditText>(Resource.Id.phone);
+            website = FindViewById<EditText>(Resource.Id.website);
+            descrip = FindViewById<EditText>(Resource.Id.describe);
+            post = FindViewById<Button>(Resource.Id.buttonPost);
+
+            post.Click += async delegate
+            {
+                Place item = new Place();
+                item.keyPlace = key.Text;
+                item.name = name.Text;
+                item.phone = phone.Text;
+                item.website = website.Text;
+                item.discrip = descrip.Text;
+
+                await placeManager.AddItem(item);
+
+                for (int i = 0; i < listStringBitmap.Count; i++)
+                {
+                    ImagePlace itemImage = new ImagePlace();
+                    itemImage.idPlace = item.id;
+                    itemImage.imagePlace = listStringBitmap[i];
+                    await imageManager.AddItem(itemImage);
+                }
+
+            };
+
         }
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
         {
@@ -72,7 +118,19 @@ namespace PlaceMap
             if (resultCode == Result.Ok)
             {
                 Stream stream = ContentResolver.OpenInputStream(data.Data);
-                arrayImage[index].SetImageBitmap(BitmapFactory.DecodeStream(stream));
+                Bitmap bitmap = BitmapFactory.DecodeStream(stream);
+
+                //resize bitmap
+                Bitmap bitmapResized = Bitmap.CreateScaledBitmap(bitmap, 100, 100, true);
+                arrayImage[index].SetImageBitmap(bitmapResized);
+
+                //convert image to string
+                int numByteBitmap = bitmapResized.ByteCount;
+                var memoryStream = new MemoryStream();
+                bitmapResized.Compress(Bitmap.CompressFormat.Png, 100, memoryStream);
+                var array = memoryStream.ToArray();
+                listStringBitmap.Add( Base64.EncodeToString(array, Base64.Default));
+
                 if (isImageFinal)
                 {
                     ImageButton imageButton = new ImageButton(this);

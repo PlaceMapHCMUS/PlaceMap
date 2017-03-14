@@ -11,6 +11,7 @@ using Android.Locations;
 using Android.Content;
 using Android.Graphics.Drawables;
 using System;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace PlaceMap
 {
@@ -28,7 +29,9 @@ namespace PlaceMap
 
         private List<ItemMenu> mItems;
         private ListView mListView;
-        
+
+        //azure
+        public static MobileServiceClient mClient;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -74,6 +77,12 @@ namespace PlaceMap
             ft.Add(Resource.Id.fragmentContainer, newFragment,"Fragment1");
             ft.Commit();
             mDrawerLayout.SetDrawerLockMode(DrawerLayout.LockModeLockedClosed);
+
+            //azure
+            mClient = new MobileServiceClient(
+               "https://placemap.azurewebsites.net"
+            );
+           
         }
 
         private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

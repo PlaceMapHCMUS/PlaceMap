@@ -22,17 +22,56 @@ namespace PlaceMap
         {
             table = MainActivity.mClient.GetTable<ImagePlace>();
         }
-        public async Task AddItem(ImagePlace item)
+        public async Task<bool> AddItem(ImagePlace item)
         {
-            await table.InsertAsync(item);
+            try
+            {
+                await table.InsertAsync(item);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
-        public async Task UpdateItem(ImagePlace item)
+        public async Task<bool> UpdateItem(ImagePlace item)
         {
-            await table.UpdateAsync(item);
+            try
+            {
+                await table.UpdateAsync(item);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
-        public async Task DeleteItem(ImagePlace item)
+        public async Task<bool> DeleteItem(ImagePlace item)
         {
-            await table.DeleteAsync(item);
+            try
+            {
+                await table.DeleteAsync(item);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<List<string>> GetListImage(String idPlace)
+        {
+            try
+            {
+                var query = from m in table
+                            where m.idPlace == idPlace
+                            select m.imagePlace;
+                return await query.ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

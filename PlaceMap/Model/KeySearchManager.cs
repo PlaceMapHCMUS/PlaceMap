@@ -14,16 +14,14 @@ using System.Threading.Tasks;
 
 namespace PlaceMap
 {
-    class PlaceManager
+    class KeySearchManager
     {
-        IMobileServiceTable<Place> table;
-        public PlaceManager()
+        IMobileServiceTable<KeySearch> table;
+        public KeySearchManager()
         {
-            table = MainActivity.mClient.GetTable<Place>();
+            table = MainActivity.mClient.GetTable<KeySearch>();
         }
-
-
-        public async Task<bool> AddItem(Place item)
+        public async Task<bool> AddItem(KeySearch item)
         {
             try
             {
@@ -35,7 +33,7 @@ namespace PlaceMap
                 return false;
             }
         }
-        public async Task<bool> UpdateItem(Place item)
+        public async Task<bool> UpdateItem(KeySearch item)
         {
             try
             {
@@ -47,7 +45,7 @@ namespace PlaceMap
                 return false;
             }
         }
-        public async Task<bool> DeleteItem(Place item)
+        public async Task<bool> DeleteItem(KeySearch item)
         {
             try
             {
@@ -59,8 +57,7 @@ namespace PlaceMap
                 return false;
             }
         }
-
-        public async Task<List<Place>> GetListPlace(String idCustomer)
+        public async Task<List<KeySearch>> GetListKey(string idCustomer)
         {
             try
             {
@@ -75,33 +72,5 @@ namespace PlaceMap
             }
         }
 
-        public async Task<int> GetReport(string id)
-        {
-            try
-            {
-                Place place = await table.LookupAsync(id);
-                return place.report;
-            }
-            catch
-            {
-                return -1;
-            }
-        }
-
-        public async Task<List<string>>GetListKey(string key)
-        {
-            try
-            {
-                var query = from m in table
-                            where m.keyPlace == key
-                            select m.id;
-                return await query.ToListAsync();
-            }
-            catch
-            {
-                return null;
-            }
-        }
-            
     }
 }

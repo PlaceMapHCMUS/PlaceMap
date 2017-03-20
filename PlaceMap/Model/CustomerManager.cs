@@ -21,30 +21,111 @@ namespace PlaceMap
         {
             table = MainActivity.mClient.GetTable<Customer>();
         }
-        public async Task AddItem(Customer item)
+
+        //add account
+        public async Task<bool> AddItem(Customer item)
         {
-            await table.InsertAsync(item);
+            try
+            {
+                await table.InsertAsync(item);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
-        public async Task UpdateItem(Customer item)
+
+        //login return id
+        public async Task<string> GetIdLogin(string email, string pass)
         {
-            await table.UpdateAsync(item);
+            try
+            {
+                var query = from m in table
+                            where m.email == email && m.pass==pass
+                            select m.id;
+                List<string> listId = await query.ToListAsync();
+                return listId[0] ;
+            }
+            catch
+            {
+                return null;
+            }
         }
-        public async Task DeleteItem(Customer item)
+
+        
+        public async Task<bool> UpdateItem(Customer item)
         {
-            await table.DeleteAsync(item);
+            try
+            {
+                await table.UpdateAsync(item);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
+        public async Task<bool> DeleteItem(Customer item)
+        {
+            try
+            {
+                await table.DeleteAsync(item);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public async Task<string> GetName(string id)
+        {
+            try
+            {
+                var query = from m in table
+                            where m.id == id
+                            select m.account;
+                var list= await query.ToListAsync();
+                return list[0] ;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
+
+
+
         public async  Task<List<string>> GetListAccount()
         {
-            var query = from m in table
-                        select m.account;
-            return await query.ToListAsync();
+            try
+            {
+                var query = from m in table
+                            select m.account;
+                return await query.ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
+
         }
 
         public async Task<List<string>> GetListPass()
         {
-            var query = from m in table
-                        select m.pass;
-            return await query.ToListAsync();
+            try
+            {
+                var query = from m in table
+                            select m.pass;
+                return await query.ToListAsync();
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

@@ -14,16 +14,14 @@ using System.Threading.Tasks;
 
 namespace PlaceMap
 {
-    class PlaceManager
+    class HistoryManager
     {
-        IMobileServiceTable<Place> table;
-        public PlaceManager()
+        IMobileServiceTable<History> table;
+        public HistoryManager()
         {
-            table = MainActivity.mClient.GetTable<Place>();
+            table = MainActivity.mClient.GetTable<History>();
         }
-
-
-        public async Task<bool> AddItem(Place item)
+        public async Task<bool> AddItem(History item)
         {
             try
             {
@@ -35,7 +33,7 @@ namespace PlaceMap
                 return false;
             }
         }
-        public async Task<bool> UpdateItem(Place item)
+        public async Task<bool> UpdateItem(History item)
         {
             try
             {
@@ -47,7 +45,7 @@ namespace PlaceMap
                 return false;
             }
         }
-        public async Task<bool> DeleteItem(Place item)
+        public async Task<bool> DeleteItem(History item)
         {
             try
             {
@@ -60,13 +58,14 @@ namespace PlaceMap
             }
         }
 
-        public async Task<List<Place>> GetListPlace(String idCustomer)
+
+        public async Task<List<string>> GetListHistory(string idCustomer)
         {
             try
             {
                 var query = from m in table
                             where m.idCustomer == idCustomer
-                            select m;
+                            select m.nameHistory;
                 return await query.ToListAsync();
             }
             catch
@@ -74,34 +73,5 @@ namespace PlaceMap
                 return null;
             }
         }
-
-        public async Task<int> GetReport(string id)
-        {
-            try
-            {
-                Place place = await table.LookupAsync(id);
-                return place.report;
-            }
-            catch
-            {
-                return -1;
-            }
-        }
-
-        public async Task<List<string>>GetListKey(string key)
-        {
-            try
-            {
-                var query = from m in table
-                            where m.keyPlace == key
-                            select m.id;
-                return await query.ToListAsync();
-            }
-            catch
-            {
-                return null;
-            }
-        }
-            
     }
 }

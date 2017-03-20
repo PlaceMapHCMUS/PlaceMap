@@ -36,8 +36,8 @@ namespace PlaceMap
         [JsonProperty(PropertyName = "website")]
         public String website { get; set; }
 
-        [JsonProperty(PropertyName = "discrip")]
-        public String discrip { get; set; }
+        [JsonProperty(PropertyName = "descrip")]
+        public String descrip { get; set; }
 
         [JsonProperty(PropertyName = "longitude")]
         public float longitude { get; set; }
@@ -50,6 +50,9 @@ namespace PlaceMap
 
         [JsonProperty(PropertyName = "dateUpdated")]
         public string dateUpdated { get; set; }
-        
+
+        [JsonProperty(PropertyName = "report")]
+        public int report { get; set; }
+
     }
 }
